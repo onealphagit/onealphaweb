@@ -49,7 +49,16 @@
         <ul>
           <li><a href="index.html#hero" class="active">Home</a></li>
           <li><a href="index.html#about">About Us</a></li>
-          <li><a href="index.html#services">Services</a></li>
+          <li class="dropdown has-dropdown"><a href="index.html#services"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+            <ul class="dd-box-shadow">
+            <li><a href="event-planning.html">Event Planning</a></li>            
+            <li><a href="event-decorations.html">Event Decorations</a></li>
+            <li><a href="event-catering.html">Event Catering</a></li>
+            <li><a href="entertainment-services.html">Entertainment Services</a></li>
+            <li><a href="weddings.html">Weddings Planning</a></li>
+            <li><a href="corporate-events.html">Corporate Events</a></li>
+            </ul>
+          </li>
           <li><a href="index.html#portfolio">Gallery</a></li>
           <li><a href="index.html#team">Artists</a></li>
           <li><a href="blog.html">Blog</a></li>
@@ -78,16 +87,16 @@
     <!-- Hero Section - Home Page -->
     <section id="hero" class="hero">
       <div class="slider">
-        <img src="assets/img/hero-bg-1.webp" alt="" data-aos="fade-in">
-        <img src="assets/img/hero-bg-2.webp" alt="" data-aos="fade-in">
-        <img src="assets/img/hero-bg-3.webp" alt="" data-aos="fade-in">
+        <img src="assets/img/hero-bg-1.webp" alt="" data-aos="fade-in" class="slider-img">
+        <img src="assets/img/hero-bg-2.webp" alt="" data-aos="fade-in" class="slider-img">
+        <img src="assets/img/hero-bg-3.webp" alt="" data-aos="fade-in" class="slider-img">
       </div>
     
       <div class="container">
         <div class="row">
           <div class="col-lg-10">
-            <h2 data-aos="fade-up" data-aos-delay="100">Create Unforgettable Events<br> with OneAlpha</h2>
-            <p data-aos="fade-up" data-aos-delay="200">We specialize in crafting extraordinary experiences that leave a lasting impression</p>
+            <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Our Website</h2>
+            <p data-aos="fade-up" data-aos-delay="200">We are a team of talented designers making websites with Bootstrap</p>
           </div>
           <div class="col-lg-5">
             <form action="#" class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300">
@@ -97,29 +106,28 @@
           </div>
         </div>
       </div>
-      <script>// JavaScript to control slider behavior
-        const slider = document.querySelector('.hero .slider');
-        const slides = Array.from(slider.getElementsByTagName('img'));
-        let currentSlide = 0;
-        
-        function showSlide(index) {
-          slides.forEach((slide, i) => {
-            if (i === index) {
-              slide.style.display = 'block';
-            } else {
-              slide.style.display = 'none';
-            }
-          });
-        }
-        
-        function nextSlide() {
-          currentSlide = (currentSlide + 1) % slides.length;
-          showSlide(currentSlide);
-        }
-        
-        setInterval(nextSlide, 3000);
-        </script>
     </section>
+    
+    
+    <script>
+      // JavaScript to handle the slider functionality
+const sliderImages = document.querySelectorAll('.slider-img');
+const sliderInterval = 3000; // Interval in milliseconds (3 seconds)
+
+let currentSlide = 0;
+const maxSlide = sliderImages.length;
+
+function changeSlide() {
+  sliderImages[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % maxSlide;
+  sliderImages[currentSlide].classList.add('active');
+}
+
+setInterval(changeSlide, sliderInterval);
+
+
+    </script>
+    
     
     
     
@@ -182,7 +190,7 @@
 
         </div>
       </div>
-
+      
     </section><!-- End About Section -->
 
     <!-- Stats Section - Home Page -->
@@ -1079,22 +1087,21 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About us</a></li>
+            <li><a href="index.html#services">Services</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="event-planning.html">Event Planning</a></li>            
+            <li><a href="event-decorations.html">Event Decorations</a></li>
+            <li><a href="event-catering.html">Event Catering</a></li>
+            <li><a href="entertainment-services.html">Entertainment Services</a></li>
+            <li><a href="weddings.html">Weddings Planning</a></li>
+            <li><a href="corporate-events.html">Corporate Events</a></li>
           </ul>
         </div>
 
@@ -1103,8 +1110,8 @@
           <p>A108 Adam Street</p>
           <p>New York, NY 535022</p>
           <p>United States</p>
-          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-          <p><strong>Email:</strong> <span>info@example.com</span></p>
+          <p class="mt-4"><strong>Phone:</strong> <span><a href="tel:9999851851">9999851851</a></span></p>
+          <p><strong>Email:</strong> <span><a href="mailto:sales@onealpha.in">sales@onealpha.in</a></span></p>
         </div>
 
       </div>

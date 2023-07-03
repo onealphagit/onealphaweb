@@ -816,21 +816,26 @@ section {
 
 .hero .slider {
   position: relative;
+  height: 100%;
+  overflow: hidden;
 }
 
-.hero .slider img {
+.hero .slider-img {
   position: absolute;
   inset: 0;
-  display: none;
+  display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
   z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.hero .slider img:first-child {
-  display: block;
+.hero .slider-img.active {
+  opacity: 1;
+  z-index: 2;
 }
 
 .hero:before {
@@ -898,6 +903,8 @@ section {
     font-size: 18px;
   }
 }
+
+
 
 
 /* Clients Section - Home Page
