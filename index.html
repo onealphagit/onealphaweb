@@ -85,6 +85,59 @@
   <main id="main">
 
 <!-- Hero Section - Home Page -->
+<style>
+  .dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+  }
+  
+  #myInput {
+    box-sizing: border-box;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #myInput:focus {outline: 3px solid #ddd;}
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+  </style>
 <section id="hero" class="hero">
   <div id="banner" class="banner">
     <img src="assets/img/hero-bg-1.webp" alt="" data-aos="fade-in">
@@ -95,16 +148,33 @@
         <h2 data-aos="fade-up" data-aos-delay="100">Unforgettable Events, Exceptional Experiences</h2>
         <p data-aos="fade-up" data-aos-delay="200">Creating unforgettable events that leave a lasting impression</p>
       </div>
-      <div class="col-lg-5">
-        <form action="#" class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300">
-          <input type="text" class="form-control" placeholder="Enter email address">
-          <input type="submit" class="btn btn-primary" value="Sign up">
-        </form>
-      </div>
     </div>
   </div>
 </section>
 <!-- End Hero Section -->
+<script>
+  /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+      txtValue = a[i].textContent || a[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        a[i].style.display = "";
+      } else {
+        a[i].style.display = "none";
+      }
+    }
+  }
+  </script>
 
 <script>
   window.addEventListener('DOMContentLoaded', function () {
@@ -346,7 +416,7 @@
               <li><i class="bi bi-check"></i> <span>Creative Approach.</span></li>
               <li><i class="bi bi-check"></i> <span>Exceeded Expectations.</span></li>
             </ul>
-            <a href="#" class="btn btn-get-started align-self-start">Get Started</a>
+            <a href="index.html#contact" class="btn btn-get-started align-self-start">Get Started</a>
           </div>
         </div><!-- Features Item -->
 
@@ -379,90 +449,81 @@
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
+                <h4>Love's radiant glow, weaving dreams together.</h4>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href=" " title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
+                <h4>Empowering Connections, <br>Inspiring Innovations</h4>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href=" " title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
+                <h4>A Night to Remember, Filled with Joy</h4>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href=" " title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
+                <h4>Traditional elegance, as vows are exchanged.</h4>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href=" " title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
+                <h4>Memorable Moments from our Productive Gathering</h4>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href=" " title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
+                <h4>Bringing Smiles Together, Cherishing Memories</h4>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href=" " title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
+                <h4>Capturing cherished moments, etched in time.                </h4>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href=" " title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
+                <h4>A Successful Day of Networking and Collaboration</h4>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href=" " title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
+                <h4>Success and Happiness, Our Efforts Rewarded</h4>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href=" " title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
@@ -926,7 +987,7 @@
               </div>
               <p class="post-category">Event Planning</p>
               <h2 class="title">
-                <a href="blog-details.html">The Essential Guide to Planning a Successful Corporate Event</a>
+                <a href="blog-corporate-event-planning-guide.html">The Essential Guide to Planning a Successful Corporate Event</a>
               </h2>
             </article>
           </div><!-- End post list item -->
@@ -938,7 +999,7 @@
               </div>
               <p class="post-category">Weddings</p>
               <h2 class="title">
-                <a href="blog-details.html">10 Unique Ideas to Make Your Wedding Reception Memorable</a>
+                <a href="blog-wedding-reception-ideas.html">10 Unique Ideas to Make Your Wedding Reception Memorable</a>
               </h2>
             </article>
           </div><!-- End post list item -->
@@ -950,7 +1011,7 @@
               </div>
               <p class="post-category">Event Decor</p>
               <h2 class="title">
-                <a href="blog-details.html">The Art of Creating Stunning Event Decor with Flowers</a>
+                <a href="blog-stunning-event-decor-flowers.html">The Art of Creating Stunning Event Decor with Flowers</a>
               </h2>
             </article>
           </div><!-- End post list item -->
@@ -1020,37 +1081,66 @@
 
           </div>
 
-          <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
+<!-- Contact Form -->
+<div class="col-lg-6">
+  <!-- Contact Form -->
+  <form onsubmit="sendEmail(event)" data-aos="fade-up" data-aos-delay="200">
+    <div class="row gy-4">
 
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                </div>
+      <div class="col-md-6">
+        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+      </div>
 
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+      </div>
 
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-                </div>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="phone" placeholder="Contact" required>
+      </div>
 
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                </div>
+      <div class="col-md-12">
+        <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+      </div>
 
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
+      <div class="col-md-12 text-center">
+        <button type="submit" class="btn-primary" >Send Message</button>
+      </div>
 
-                  <button type="submit">Send Message</button>
-                </div>
+    </div>
+  </form>
+</div><!-- End Contact Form -->
 
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
+<!-- JavaScript for Sending Email -->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  // Function to handle form submission and send email
+  function sendEmail(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Extract form data
+    const formData = new FormData(event.target);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const phone = formData.get('phone');
+    const message = formData.get('message');
+
+    // Send email using Email.send() method
+    Email.send({
+      Host: "smtp.elasticemail.com",
+      Username: "production.onealpha@gmail.com",
+      Password: "098920FBED5001019CF0F5F2DC42BC056355",
+      To: "production.onealpha@gmail.com",
+      From: email, // Use the user's email as the "From" address
+      Subject: "Contact Form Submission from " + name,
+      Body: "Name: " + name + "\nEmail: " + email + "\nPhone: " + phone + "\n\nMessage:\n" + message,
+    }).then(function (message) {
+      // Display a success message to the user after email is sent
+      alert("Thank you for your message. We will get back to you shortly.");
+    });
+  }
+</script>
+
 
         </div>
 
@@ -1084,6 +1174,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#about">About us</a></li>
             <li><a href="index.html#services">Services</a></li>
+            <li><a href="team.html">Our Team</a></li>
           </ul>
         </div>
 
