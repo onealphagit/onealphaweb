@@ -1064,7 +1064,6 @@
                   <i class="bi bi-telephone"></i>
                   <h3>Call Us</h3>
                   <p><a href="tel:9115338816">9115338816</a></p>
-
                 </div>
               </div><!-- End Info Item -->
 
@@ -1072,7 +1071,7 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="400">
                   <i class="bi bi-envelope"></i>
                   <h3>Email Us</h3>
-                  <p><a href="mailto:@onealpha.in">@onealpha.in</a></p></br>
+                  <p><a href="mailto:sales@onealpha.in">sales@onealpha.in</a></p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -1082,66 +1081,63 @@
 
           </div>
 
-<!-- Contact Form -->
-<div class="col-lg-6">
-  <!-- Contact Form -->
-  <form onsubmit="sendEmail(event)" data-aos="fade-up" data-aos-delay="200">
-    <div class="row gy-4">
-
-      <div class="col-md-6">
-        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-      </div>
-
-      <div class="col-md-6">
-        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-      </div>
-
-      <div class="col-md-12">
-        <input type="text" class="form-control" name="phone" placeholder="Contact" required>
-      </div>
-
-      <div class="col-md-12">
-        <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-      </div>
-
-      <div class="col-md-12 text-center">
-        <button type="submit" class="btn-primary" >Send Message</button>
-      </div>
-
-    </div>
-  </form>
-</div><!-- End Contact Form -->
-
-<!-- JavaScript for Sending Email -->
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-<script>
-  // Function to handle form submission and send email
-  function sendEmail(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
-
-    // Extract form data
-    const formData = new FormData(event.target);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const phone = formData.get('phone');
-    const message = formData.get('message');
-
-    // Send email using Email.send() method
-    Email.send({
-      Host: "smtp.elasticemail.com",
-      Username: "production.onealpha@gmail.com",
-      Password: "098920FBED5001019CF0F5F2DC42BC056355",
-      To: "sales@onealpha.in",
-      From: "production.onealpha@gmail.com", // Use the user's email as the "From" address
-      Subject: "Contact Form Submission from " + name,
-      Body: "Name: " + name + "<br>" + "Email: " + email + "<br>" + "Phone: " + phone + "<br>Message:" + message,
-  }).then(function (message) {
-      // Display a success message to the user after email is sent
-      alert("Thank you for your message. We will get back to you shortly.");
-    });
-  }
-</script>
-
+          <div class="col-lg-6">
+            <form onsubmit="sendEmail(event)" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="phone" placeholder="Contact" required>
+                </div>
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <button type="submit" class="btn-primary" id="submitButton">Send Message</button>
+                </div>
+              </form>
+              </div><!-- End Contact Form -->
+              
+              <!-- JavaScript for Sending Email -->
+              <script src="https://smtpjs.com/v3/smtp.js"></script>
+              <script>
+                function sendEmail(event) {
+                  event.preventDefault();
+              
+                  const formData = new FormData(event.target);
+                  const name = formData.get('name');
+                  const email = formData.get('email');
+                  const phone = formData.get('phone');
+                  const message = formData.get('message');
+              
+                  const submitButton = document.getElementById("submitButton");
+                  submitButton.textContent = "Sending...";
+                  submitButton.disabled = true;
+              
+                  Email.send({
+                    Host: "smtp.elasticemail.com",
+                    Username: "production.onealpha@gmail.com",
+                    Password: "098920FBED5001019CF0F5F2DC42BC056355",
+                    To: "sales@onealpha.in",
+                    From: "production.onealpha@gmail.com",
+                    Subject: "Contact Form Submission from " + name,
+                    Body: "Name: " + name + "<br>" + "Email: " + email + "<br>" + "Phone: " + phone + "<br>Message:" + message,
+                  }).then(function (message) {
+                    submitButton.textContent = "Sent";
+                    submitButton.disabled = true;
+              
+                    // Clear the form fields after email is sent
+                    const contactForm = document.getElementById("contactForm");
+                    contactForm.reset();
+                  });
+                }
+              </script>
+            
+          </div><!-- End Contact Form -->
 
         </div>
 
